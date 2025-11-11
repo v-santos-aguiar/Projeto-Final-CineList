@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineList - Minha Lista</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <header>
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary sticky-top"
+        aria-label="Navegação Principal"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="index.html">CineList</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="minha-lista.html">Minha Lista</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="conectar.html">Conectar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="perfil.html">Perfil</a>
+              </li>
+            </ul>
+            <form
+              class="d-flex"
+              role="search"
+              aria-label="Buscar filmes no catálogo"
+            >
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar filme..."
+                aria-label="Buscar"
+              >
+              <button class="btn btn-outline-danger" type="submit">
+                Buscar
+              </button>
+            </form>
+            <div class="d-flex align-items-center mt-3 mt-lg-0 ms-lg-3">
+              <button
+                class="btn btn-outline-secondary btn-sm me-2 fw-bold"
+                id="font-increase"
+                aria-label="Aumentar tamanho da fonte"
+                title="Aumentar Fonte (A+)"
+              >
+                A+
+              </button>
+              <button
+                class="btn btn-outline-secondary btn-sm me-2 fw-bold"
+                id="font-decrease"
+                aria-label="Diminuir tamanho da fonte"
+                title="Diminuir Fonte (A-)"
+              >
+                A-
+              </button>
+              <div
+                class="form-check form-switch ms-2"
+                title="Alternar tema claro/escuro"
+              >
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="theme-switch"
+                >
+                <label
+                  class="form-check-label"
+                  for="theme-switch"
+                  id="theme-icon-label"
+                >
+                  <i class="bi bi-moon-fill"></i>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container my-5 flex-grow-1">
+      <h1 class="mb-4">Minha Lista</h1>
+      <div class="mb-4" role="toolbar" aria-label="Filtros das listas">
+        <h2 class="h5">Filtros</h2>
+        <div class="btn-group" role="group" aria-label="Controles de filtro">
+          <button type="button" class="btn btn-danger active" id="filtro-todos">
+            Mostrar Todas
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            id="filtro-assistidos"
+          >
+            Apenas Assistidos
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            id="filtro-interesses"
+          >
+            Apenas Interesses
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            id="filtro-avaliados"
+          >
+            Apenas Avaliados
+          </button>
+        </div>
+      </div>
+      <hr class="my-4">
+      <section id="secao-assistidos" class="mb-5">
+        <h3 class="mb-3 h4">Filmes Assistidos</h3>
+        <div id="lista-assistidos" class="row">
+          <div class="col-12 text-center text-muted py-5 placeholder-lista">
+            <i class="bi bi-cloud-drizzle" style="font-size: 3rem"></i>
+            <p class="mt-3">Você ainda não marcou filmes como assistidos.</p>
+            <a href="index.html" class="btn btn-danger btn-sm"
+              >Explorar Filmes</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="secao-interesses" class="mb-5">
+        <h3 class="mb-3 h4">Minha Lista de Interesses</h3>
+        <div id="lista-interesses" class="row">
+          <div class="col-12 text-center text-muted py-5 placeholder-lista">
+            <i class="bi bi-cloud-drizzle" style="font-size: 3rem"></i>
+            <p class="mt-3">Sua lista de interesses está vazia.</p>
+            <a href="index.html" class="btn btn-danger btn-sm"
+              >Explorar Filmes</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="secao-avaliados" class="mb-5">
+        <h3 class="mb-3 h4">Filmes Avaliados</h3>
+        <div id="lista-avaliados" class="row">
+          <div class="col-12 text-center text-muted py-5 placeholder-lista">
+            <i class="bi bi-cloud-drizzle" style="font-size: 3rem"></i>
+            <p class="mt-3">Você ainda não avaliou nenhum filme.</p>
+            <a href="index.html" class="btn btn-danger btn-sm"
+              >Explorar Filmes</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-body-tertiary text-center p-4">
+      <p class="mb-0">
+        &copy; 2025 CineList. Todos os direitos reservados.
+      </p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+/* ============================= */
+/* VARIÁVEIS DE COR DO CINE-LIST */
+/* ============================= */
+:root {
+    --cinelist-red: #E50914; /* Vermelho de Ação/Destaque */
+    --cinelist-bg-dark: #121212; /* Fundo principal escuro */
+}
+
+/* ============== */
+/* AJUSTES GERAIS   */
+/* ============== */
+
+/* Fundo do corpo no Modo Escuro */
+[data-bs-theme="dark"] body {
+    background-color: var(--cinelist-bg-dark) !important;
+}
+
+/*Modo Escuro.*/
+[data-bs-theme="dark"] .card {
+    background-color: #212529 !important; /* Cor escura do card */
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Links da navegação (Hover vermelho) */
+.nav-link:hover, .navbar-brand:hover {
+    color: var(--cinelist-red) !important;
+}
+
+/* Botões de Ação (Cor Vermelha) */
+.btn-danger {
+    background-color: var(--cinelist-red) !important;
+    border-color: var(--cinelist-red) !important;
+}
+
+/* Switch de Tema (para ficar vermelho quando ativo) */
+.form-check-input:checked {
+    background-color: var(--cinelist-red);
+    border-color: var(--cinelist-red);
+}
+
+/* Torna o botão da estrela transparente e sem borda */
+.btn-rating {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important; /* Remove o brilho azul do :focus */
+  padding: 0;
+  margin: 0 2px;
+}
+
+/* Aplica o cursor de "mãozinha" ao botão da estrela. */
+.btn-rating:hover {
+  cursor: pointer;
+}
