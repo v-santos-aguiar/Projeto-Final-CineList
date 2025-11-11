@@ -385,6 +385,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+// --- BOTÕES DE PERFIL (Logout / Deletar) ---
+const btnLogout = document.getElementById('btn-logout');
+const btnDeleteAccount = document.getElementById('btn-delete-account');
+
+if (btnLogout && btnDeleteAccount) {
+    
+    btnLogout.addEventListener('click', (event) => {
+        event.preventDefault();
+        
+        if (confirm('Você tem a certeza que deseja sair?')) {
+            alert('Você saiu da sua conta (simulado).');
+            // Redireciona para a página de login
+            window.location.href = 'conectar.html';
+        }
+    });
+
+    btnDeleteAccount.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        if (confirm('ATENÇÃO! Você tem a certeza que deseja DELETAR a sua conta?')) {
+            if (confirm('Esta ação é irreversível. DELETAR mesmo assim?')) {
+                alert('Conta deletada (simulado).');
+
+                window.location.href = 'index.html';
+            }
+        }
+    });
+}
     // --- CARREGAMENTO DINÂMICO DE FILMES ---
     const detalhePrincipal = document.getElementById('detalhe-principal');
 
@@ -423,5 +451,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const filmeSelecionado = encontrarFilmePorId(filmeId);
         preencherPaginaDoFilme(filmeSelecionado);
     }
+
 
 });
